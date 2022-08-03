@@ -17,5 +17,5 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile.dev --tag ngtest
     - name: Run the test
-      run: docker run ngtest npm run test
+      run: docker run ngtest npm run test -- --coverage
   
