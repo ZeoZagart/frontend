@@ -1,0 +1,21 @@
+name: Run unit tests
+
+on:
+  push:
+    branches: 
+    - .*
+  workflow_dispatch:
+  label:
+    types:
+      - created
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile.dev --tag ngtest
+    - name: Run the test
+      run: docker run ngtest npm run test
+  
