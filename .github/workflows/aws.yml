@@ -24,6 +24,6 @@ jobs:
           environment_name: "Docker-env"
           region: "us-east-1"
           existing_bucket_name: "elasticbeanstalk-us-east-1-550610942901"
-          version_label: 6
+          version_label: 5
           use_existing_version_if_available: true
           deployment_package: deploy.zip
